@@ -1,330 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Na fali faktów i prawdy | Portal Informacyjny</title>
+    <title>Na fali faktów i prawdy | Portal</title>
     <style>
-        /* Zmienne kolorystyczne - Granat i Czerwień */
-        :root {
-            --navy: #0A192F;
-            --navy-light: #112240;
-            --red: #D90429;
-            --red-hover: #EF233C;
-            --bg-color: #F4F6F9;
-            --text-main: #2B2D42;
-            --text-muted: #8D99AE;
-            --white: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* NAWIGACJA */
-        .navbar {
-            background-color: var(--navy);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo-container img {
-            height: 40px;
-            /* Tu wczyta się Twoje logo, jeśli nazwiesz je logo.png */
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-            text-transform: uppercase;
-        }
-
-        .nav-links a:hover {
-            color: var(--red);
-        }
-
-        /* GŁÓWNY UKŁAD STRONY */
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 5%;
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            gap: 2rem;
-        }
-
-        /* SEKCJA GŁÓWNA - ARTYKUŁY */
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .article-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 5px solid var(--red);
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .article-content {
-            padding: 1.5rem;
-        }
-
-        .category-badge {
-            background-color: var(--navy);
-            color: var(--white);
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .article-title {
-            font-size: 1.6rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-
-        .article-excerpt {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .article-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #eee;
-            padding-top: 1rem;
-        }
-
-        .read-more {
-            color: var(--red);
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .read-more:hover {
-            color: var(--red-hover);
-        }
-
-        .share-btns button {
-            background: none;
-            border: 1px solid #ddd;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            color: var(--navy);
-            transition: 0.3s;
-        }
-
-        .share-btns button:hover {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        /* PANEL BOCZNY (REKLAMY I PROMO) */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .ad-space {
-            background-color: #e2e8f0;
-            border: 2px dashed #cbd5e1;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-weight: bold;
-            border-radius: 8px;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        .promo-box {
-            background-color: var(--navy-light);
-            color: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .promo-box h3 {
-            color: var(--red);
-            margin-bottom: 1rem;
-        }
-
-        .yt-btn {
-            display: inline-block;
-            background-color: var(--red);
-            color: var(--white);
-            padding: 0.8rem 1.5rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            margin-top: 1rem;
-            width: 100%;
-            transition: 0.3s;
-        }
-
-        .yt-btn:hover {
-            background-color: var(--red-hover);
-        }
-
-        /* STOPKA */
-        footer {
-            background-color: var(--navy);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 5%;
-            margin-top: 3rem;
-            border-top: 5px solid var(--red);
-        }
-
-        /* RESPONSYWNOŚĆ DLA TELEFONÓW */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none; /* W przyszłości można tu dodać menu hamburgerowe */
-            }
-            .navbar {
-                justify-content: center;
-            }
-        }
+        body { font-family: 'Arial', sans-serif; margin: 0; background: #e0e0e0; color: #333; }
+        header { background: #001f3f; color: white; padding: 30px 20px; text-align: center; border-bottom: 5px solid #ff0000; text-transform: uppercase; }
+        header h1 { margin: 0; font-size: 36px; letter-spacing: 2px; }
+        nav { background: #111; padding: 15px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+        nav a:hover { color: #ff0000; }
+        .main-content { max-width: 1000px; margin: 30px auto; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .hero-article { padding: 40px; text-align: center; }
+        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; text-transform: uppercase; margin-top: 20px; }
+        .categories-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: #ddd; }
+        .cat-card { background: white; padding: 25px; text-align: center; text-decoration: none; color: #001f3f; font-weight: bold; text-transform: uppercase; }
+        .cat-card:hover { color: #ff0000; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#" class="logo-container">
-            <img src="profilowe.jpg" alt="Logo" onerror="this.style.display='none'">
-            Na fali faktów i prawdy
-        </a>
-        <ul class="nav-links">
-            
-            <li><a href="globalne.html">Globalne</a></li>
-            <li><a href="polska-scena.html">Polska Scena</a></li>
-            <li><a href="ekonomia.html">Ekonomia</a></li>
-        </ul>
+    <header>
+        <h1>NA FALI FAKTÓW I PRAWDY</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Główna</a>
+        <a href="ekonomia.html">Ekonomia</a>
+        <a href="globalne.html">Globalne</a>
+        <a href="polska-scena.html">Polska Scena</a>
     </nav>
 
-    <div class="container">
-        
-        <main class="main-content">
+    <div class="main-content">
+        <div class="hero-article">
+            <h2>WITAJCIE W CENTRUM WYDARZEŃ</h2>
+            <p>Demaskujemy rzeczywistość. Sprawdź nasze najnowsze śledztwa i analizy w kategoriach poniżej.</p>
             
-            <article class="article-card">
-                <div class="article-content">
-                    <span class="category-badge">Polska Scena</span>
-                    <h2 class="article-title">Oto co naprawdę kryje się za nową ustawą. Fakty, o których milczą media.</h2>
-                    <p class="article-excerpt">Z mocnym uderzeniem zaczynamy analizę najnowszych wydarzeń na wiejskiej. Prześwietlamy dokumenty krok po kroku, wyciągając to, co najważniejsze. Mocny hook, konkretne dane i bezwzględna prawda...</p>
-                    
-                    <div class="article-footer">
-                        <a href="#" class="read-more">Czytaj dalej ➔</a>
-                        <div class="share-btns">
-                            <button onclick="alert('Skopiowano link do artykułu!')">Udostępnij</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
+            <a href="https://www.youtube.com/@Nafalifaktowiprawdy" target="_blank" class="btn-yt">🔴 SUBSKRYBUJ KANAŁ NA YT</a>
+        </div>
 
-            <article class="article-card">
-                <div class="article-content">
-                    <span class="category-badge">Ekonomia</span>
-                    <h2 class="article-title">Inflacja znów w górę? Eksperci alarmują, a my sprawdzamy liczby.</h2>
-                    <p class="article-excerpt">Krótka i dynamiczna analiza najnowszego raportu rynkowego. Zobacz, jak nowe regulacje wpłyną na Twoje zarobki i dlaczego oficjalne komunikaty mijają się z prawdą w tabelach giełdowych...</p>
-                    
-                    <div class="article-footer">
-                        <a href="#" class="read-more">Czytaj dalej ➔</a>
-                        <div class="share-btns">
-                            <button onclick="alert('Skopiowano link do artykułu!')">Udostępnij</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-        </main>
-
-        <aside class="sidebar">
-            
-            <div class="ad-space">
-                Miejsce na Twoją Reklamę<br>(np. Google AdSense)
-            </div>
-
-            <div class="promo-box">
-                <h3>Oglądaj Prawdę</h3>
-                <p>Sprawdź najnowsze materiały wideo. Dynamiczne analizy, mocne hooki, same fakty.</p>
-                <a href="#" class="yt-btn">Subskrybuj Kanał</a>
-            </div>
-
-            <div class="ad-space" style="height: 400px;">
-                Miejsce na Reklamę Pionową
-            </div>
-
-        </aside>
-
+        <div class="categories-grid">
+            <a href="ekonomia.html" class="cat-card">Ekonomia</a>
+            <a href="globalne.html" class="cat-card">Globalne</a>
+            <a href="polska-scena.html" class="cat-card">Polska Scena</a>
+        </div>
     </div>
-
-    <footer>
-        <h2>Na fali faktów i prawdy</h2>
-        <p>&copy; 2026 Wszelkie prawa zastrzeżone. Demaskujemy mity, pokazujemy fakty.</p>
-    </footer>
 
 </body>
 </html>
