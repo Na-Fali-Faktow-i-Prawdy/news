@@ -2,19 +2,70 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ekonomia | Na fali faktów i prawdy</title>
     <style>
-        body { font-family: sans-serif; background: #001f3f; color: white; padding: 50px; line-height: 1.6; }
-        .kontener { max-width: 800px; margin: auto; background: #fff; color: #333; padding: 30px; border-radius: 10px; border-top: 10px solid #ff0000; }
-        h1 { color: #001f3f; }
-        .powrot { display: inline-block; margin-top: 20px; color: #ff0000; text-decoration: none; font-weight: bold; }
+        body { font-family: 'Arial', sans-serif; margin: 0; background: #e0e0e0; color: #333; }
+        
+        /* Identyczny nagłówek i menu jak na głównej stronie */
+        header { background: #001f3f; color: white; padding: 25px 20px; text-align: center; border-bottom: 5px solid #ff0000; text-transform: uppercase; }
+        header h1 { margin: 0; font-size: 32px; letter-spacing: 2px; }
+        header p { margin: 5px 0 0 0; color: #aaa; font-size: 14px; font-weight: bold; }
+        
+        nav { background: #111; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; font-size: 16px; text-transform: uppercase; transition: color 0.3s; }
+        nav a:hover, nav a.active { color: #ff0000; }
+        
+        /* Styl samego artykułu */
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .article-box { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-top: 8px solid #001f3f; }
+        .article-title { color: #ff0000; font-size: 32px; margin-top: 0; text-transform: uppercase; line-height: 1.2; }
+        .article-meta { color: #777; font-size: 14px; font-weight: bold; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 2px solid #eee; }
+        
+        .content p { font-size: 18px; line-height: 1.8; margin-bottom: 20px; color: #222; }
+        .content p.lead { font-size: 22px; font-weight: bold; color: #001f3f; border-left: 5px solid #ff0000; padding-left: 15px; }
+        
+        /* Przycisk powrotu */
+        .btn-back { display: inline-block; margin-top: 30px; padding: 15px 30px; background: #001f3f; color: white; text-decoration: none; font-weight: bold; font-size: 16px; border-radius: 5px; text-transform: uppercase; transition: background 0.3s; }
+        .btn-back:hover { background: #ff0000; }
     </style>
 </head>
 <body>
-    <div class="kontener">
-        <h1>KONIEC ERY SPECJALISTÓW?</h1>
-        <p>To, co widzieliście do tej pory, to dopiero początek. Właśnie czytacie artykuł na portalu, który nie powinien istnieć. Wszystko stworzyła Sztuczna Inteligencja pod moje dyktando...</p>
-        <a href="index.html" class="powrot">← Powrót do strony głównej</a>
+
+    <header>
+        <h1>NA FALI FAKTÓW I PRAWDY</h1>
+        <p>Portal Informacyjny - Bez cenzury</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Główna</a>
+        <a href="ekonomia.html" class="active">Ekonomia</a>
+        <a href="#">Polityka</a>
+        <a href="#">Świat</a>
+    </nav>
+
+    <div class="container">
+        <div class="article-box">
+            <h1 class="article-title">GOSPODARKA W STRZĘPACH CZY NOWY POCZĄTEK? Jak AI rewolucjonizuje rynek w 2026 roku</h1>
+            <div class="article-meta">DZIAŁ: EKONOMIA | AUTOR: NA FALI FAKTÓW I PRAWDY</div>
+            
+            <div class="content">
+                <p class="lead">Główne media milczą, ale prawda jest brutalna: rynek, jaki znamy, właśnie przestaje istnieć. Giganci technologiczni tną etaty, a to, co miało być "pieśnią przyszłości", dzieje się na naszych oczach. Zapnijcie pasy.</p>
+                
+                <p>Przez lata wmawiano nam, że żeby cokolwiek osiągnąć w cyfrowym świecie, potrzebujesz sztabu specjalistów. Programistów biorących kilkanaście tysięcy za stronę, grafików od każdego logotypu, agencji pilnujących wizerunku. Ten system był zaprojektowany tak, by zatrzymać zwykłego człowieka przed wejściem do gry i przejęciem głosu.</p>
+                
+                <p><strong>Ale to już koniec. Złamaliśmy ten system.</strong></p>
+                
+                <p>Dowód? Właśnie go czytasz. Ten portal nie kosztował setek tysięcy złotych. Nie pracował nad nim zespół deweloperów z wielkich korporacji. Powstał w kilkanaście minut, napędzany wyłącznie mocą Sztucznej Inteligencji i precyzyjnymi instrukcjami. Udowadniam Wam dzisiaj, że bariera wejścia runęła z hukiem.</p>
+                
+                <p>Dla wielkich korporacji to koszmar – tracą monopol na tworzenie profesjonalnych mediów. Dla nas, niezależnych twórców, to najpotężniejsza broń. Możemy tworzyć uderzające treści i portale informacyjne zza własnego biurka. Przejmujemy kontrolę nad narracją.</p>
+                
+                <p>To dopiero pierwsza fala. Będziemy tu punktować każdą hipokryzję i pokazywać mechanizmy, które inni próbują ukryć. Zostańcie z nami, bo rewolucja właśnie transmitowana jest na żywo.</p>
+            </div>
+            
+            <a href="index.html" class="btn-back">← Wróć do aktualności</a>
+        </div>
     </div>
+
 </body>
 </html>
